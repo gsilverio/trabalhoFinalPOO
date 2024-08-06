@@ -1,0 +1,33 @@
+.home-container {
+  background-image: url("../../assets/bg.png");
+  height: 91.6vh;
+}
+
+.home-tittle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.home-tittle h3 {
+  color: #fff;
+  -webkit-text-stroke: 3px black;
+  font-size: 10em;
+
+  text-align: center;
+}
+
+.home-tittle button {
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+  width: 200px;
+}
+.btn:hover {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+}

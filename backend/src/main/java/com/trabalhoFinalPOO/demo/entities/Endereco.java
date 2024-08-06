@@ -1,5 +1,7 @@
 package com.trabalhoFinalPOO.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.*;
 
 @Entity
@@ -8,14 +10,13 @@ public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
     private String rua;
     private String numero;
     private String bairro;
     private String ponteDeReferencia;
     @OneToOne
     @JoinColumn(name = "pessoa_id")
+    @JsonBackReference
     private Pessoa pessoa;
 
     public Endereco(){ }

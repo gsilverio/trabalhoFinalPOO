@@ -1,0 +1,77 @@
+.login-section {
+  display: flex;
+  justify-content: center;
+  height: 91.6vh;
+  background-image: url("../../assets/bg.png");
+  background-size: auto;
+  font-family: "Akira Expanded", sans-serif;
+}
+.base-card {
+  margin-top: 3.5%;
+  height: 80%;
+  width: 25%;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.login-label h3 {
+  margin-top: 30%;
+  margin-bottom: 0;
+}
+
+.login-menu {
+  height: 50%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-menu input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.login-menu input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+.btn-login {
+  background-color: black;
+  color: #fff;
+}
+
+.btn-login:hover {
+  background-color: black;
+  color: #fff;
+}
+
+@media (min-width: 320px) {
+  .base-card {
+    width: 100%;
+  }
+  .login-label img {
+    width: 90%;
+  }
+}
+@media (min-width: 1024px) {
+  .base-card {
+    width: 45%;
+  }
+  .login-label img {
+    width: 100%;
+  }
+}

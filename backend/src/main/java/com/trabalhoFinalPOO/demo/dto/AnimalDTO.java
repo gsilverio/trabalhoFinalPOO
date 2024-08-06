@@ -1,15 +1,12 @@
-package com.trabalhoFinalPOO.demo.entities;
+package com.trabalhoFinalPOO.demo.dto;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import com.trabalhoFinalPOO.demo.entities.Pessoa;
 import jakarta.persistence.*;
 
-@Entity
-@Table(name= "tb_animal")
-public class Animal {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class AnimalDTO {
+
     private Long id;
     private String nome;
     private Double idade;
@@ -18,14 +15,10 @@ public class Animal {
     private Boolean castrado;
 
     private Boolean isAdopted;
-    @ManyToOne
-    @JoinColumn(name = "pessoa_id")
-    @JsonBackReference
-    private Pessoa pessoa;
 
-    public Animal(){}
+    public AnimalDTO(){}
 
-    public Animal(Long id, String nome, Double idade, String tipoAnimal, Boolean vacinado, Boolean castrado,Boolean isAdopted) {
+    public AnimalDTO(Long id, String nome, Double idade, String tipoAnimal, Boolean vacinado, Boolean castrado, Boolean isAdopted) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
@@ -34,22 +27,6 @@ public class Animal {
         this.castrado = castrado;
         this.isAdopted = isAdopted;
     }
-    public Animal(String nome, Double idade, String tipoAnimal, Boolean vacinado, Boolean castrado) {
-        this.nome = nome;
-        this.idade = idade;
-        this.tipoAnimal = tipoAnimal;
-        this.vacinado = vacinado;
-        this.castrado = castrado;
-
-    }
-
-    public Animal(Animal animal) {
-        this.nome = animal.getNome();
-        this.idade= animal.getIdade();
-        this.tipoAnimal = animal.getTipoAnimal();
-        this.vacinado = animal.getVacinado();
-        this.castrado = animal.getCastrado();
-    }
 
     public Long getId() {
         return id;
@@ -57,14 +34,6 @@ public class Animal {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Pessoa getPessoa() {
-        return pessoa;
-    }
-
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
     }
 
     public String getNome() {

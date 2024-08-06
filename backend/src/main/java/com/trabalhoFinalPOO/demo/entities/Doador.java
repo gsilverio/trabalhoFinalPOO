@@ -1,24 +1,28 @@
 package com.trabalhoFinalPOO.demo.entities;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import org.springframework.beans.factory.annotation.Value;
+
 import java.util.Date;
-
+@Entity
+@Table(name = "tb_doador")
 public class Doador extends Pessoa{
-    private Date date;
+    private String tipo;
+    public Doador() {
 
-    public Doador(Date date) {
-        this.date = date;
     }
 
-    public Doador(Long id, String nome, String telefone, String email, Date date) {
-        super(id, nome, telefone, email);
-        this.date = date;
+    public Doador(Long id, String nome, String telefone, String email, String senha, String tipo) {
+        super(id, nome, telefone, email, senha);
+        this.tipo = tipo;
     }
 
-    public Date getDate() {
-        return date;
+    public String getTipo() {
+        return tipo;
     }
-
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }
